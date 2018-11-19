@@ -7,10 +7,10 @@ from django.views.generic.base import View
 from ..forms import InsumoForm
 
 
-class inserir_insumos(View):
+class cad_insumos(View):
     form_class = InsumoForm
     initial = {}
-    template_name = 'stocker/inserir_insumos.html'
+    template_name = 'stocker/cad_insumos.html'
 
     def get(self, request, *args, **kwargs):
         form = self.form_class(initial=self.initial)

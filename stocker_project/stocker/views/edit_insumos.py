@@ -8,7 +8,7 @@ from ..forms import EditInsumoForm
 from ..models import Insumo
 
 
-class retirar_insumos(View):
+class edit_insumos(View):
     form_class = EditInsumoForm
     initial = {}
     template_name = 'stocker/edit_insumos.html'
