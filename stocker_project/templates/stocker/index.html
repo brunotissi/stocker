@@ -1,16 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Rango</title>
-</head>
-<body>
-<h1>Rango says...</h1>
-<div>
-hey there partner! <br />
-<strong>{{ boldmessage }}</strong><br />
-</div>
-<div>
-<a href="/rango/about/">About</a><br />
-</div>
-</body>
-</html>
+{% extends 'stocker/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+{% endblock %}
+
+{% block body_block %}
+	<h1 class="display-2">Bem-vindo</h1>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <p class="lead">
+            Se você é novo no nosso site <strong>Cadastre-se</strong>!
+          </p>
+        </div>
+        <div class="col-sm">
+          <p class="lead">
+            Se você já é cadastrado é só <strong>Entrar</strong>!
+          </p>
+        </div>
+      </div>
+    </div>
+
+	<div>
+		<ul>
+			<li><a href="{% url 'register' %}">Cadastro</a></li>
+			<li><a href="{% url 'login' %}">Login</a></li>
+		</ul>
+	</div>
+{% endblock body_block %}

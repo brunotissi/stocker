@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+<head lang="pt">
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<title>
+ 	Stocker
+	{% block title_block %}
+ 	{% endblock %}
+	</title>
+	<style>
+		nav {
+			color: #C4C4C4;
+		}
+		#logo {
+			font-size: 45px;
+		}
+
+	</style>
+</head>
+<body>
+	<nav class="row navbar navbar-dark bg-dark">
+		<div class="col-md-2" id="logo">STOCKER</div>
+		<div class="col-md-2"></div>
+		<div class="col-md-3" id="pesquisa">
+			<div class="input-group col-md-12">
+				<span class="input-group-append">
+					<button class="btn btn-outline-secondary" type="button">
+						<i class="fa fa-search">Ir</i> <!-- Aqui vai o icone -->
+					</button>
+				  </span>
+				<input class="form-control py-2" type="search" placeholder="Pesquisar" id="example-search-input"/>
+			</div>
+			<!-- BARRA DE PESQUISA -->
+		</div>
+		<div class="col-md-1"></div>
+		<div class="col-md-3" id="area-user">
+			<img id="icone-user"/>
+			<div id="nome-user"> Aqui vai o icone e o nome user </div>
+		</div>
+		<div class="col-md-1">SAIR</div>
+	</nav>
+	<div id="corpo" class="row">
+			<div class="col-md-3 bg-light" id="sidebar">
+				{% block sidebar %}
+				{% endblock %}
+			</div>
+            <div class="col-md-1"></div>
+            <div class="col-md-7" id="conteudo">
+                {% block body_block %}
+                {% endblock %}
+            </div>
+            <div class="col-md-1"></div>
+	</div>
+	<div class="jumbotron text-center" style="margin-bottom:0; position:absolute; bottom:0;width:100%;">
+  <p>Stocker by alunos do BSI-6 de 2018 - Ana, Bruno, Igor, José</p>
+</div>
+</body>
+</html>
