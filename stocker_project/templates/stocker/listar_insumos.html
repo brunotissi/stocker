@@ -10,7 +10,7 @@ Adicionar Categoria
         {% if insumos %}
             <ul>
                 {% for insumo in insumos %}
-                    <li><a href="">{{ insumo.nome }}</a></li>
+                    <li><a href="{% url 'edit_insumos' insumo.id %}">{{ insumo.nome }}</a></li>
                 {% endfor %}
             </ul>
         {% else %}

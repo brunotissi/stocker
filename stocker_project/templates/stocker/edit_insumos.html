@@ -1,0 +1,24 @@
+{% extends 'stocker/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+Adicionar Categoria
+{% endblock %}
+
+{% block body_block %}
+    <h1>Editar Insumo</h1>
+    <form id="category_form" method="post" action="{%  url 'edit_insumos' insumo.id %}">
+            {% csrf_token %}
+        {% for hidden in form.hidden_fields %}
+            {{ hidden }}
+        {% endfor %}
+        {% for field in form.visible_fields %}
+            {{ field.errors }}
+            {{ field.help_text }}
+            {{ field }}
+        {% endfor %}
+       Quantidade: <input type="number" name="quantidade">
+    <input type="submit" name="add-insumo" value="Adicionar Insumo" />
+    <input type="submit" name="remove-insumo" value="Retirar Insumo" />
+     </form>
+{% endblock %}

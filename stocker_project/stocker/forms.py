@@ -15,6 +15,13 @@ class InsumoForm(forms.ModelForm):
 		model = Insumo
 		fields = ('nome', 'quantidade', 'unidade', )
 
+
+class EditInsumoForm(forms.ModelForm):
+	class Meta:
+		model = Insumo
+		fields = ('quantidade',)
+
+
 class UnidadeForm(forms.ModelForm):
 	class Meta:
 		model = Unidade
