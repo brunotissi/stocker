@@ -37,6 +37,6 @@ def user_login(request):
 				return HttpResponse("Sua conta não é válida!")
 		else:
 			print("Campos inválidos: {0}, {1}".format(username, password))
-			return HttpResponse("Campos inválidos!")
+			return HttpResponse("Usuário e/ou senha inválido(s)!")
 	else:
 		return render(request, 'stocker/login.html', {})
