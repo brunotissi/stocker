@@ -2,13 +2,13 @@
 {% load staticfiles %}
 
 {% block title_block %}
-Adicionar Categoria
+Cadastro de Unidade de Medida
 {% endblock %}
 
 {% block body_block %}
-    <h1>Criar Insumo</h1>
+    <h1>Cadastro de Unidade de Medida</h1>
     <div>
-    <form id="category_form" method="post" action="{%  url 'inserir_insumos' %}">
+    <form id="category_form" method="post" action="{%  url 'cad_unidade' %}">
         {% csrf_token %}
         {% for hidden in form.hidden_fields %}
             {{ hidden }}
@@ -18,7 +18,7 @@ Adicionar Categoria
             {{ field.help_text }}
             {{ field }}
         {% endfor %}
-        <input type="submit" name="submit" value="Criar Insumo" />
+        <input type="submit" name="submit" value="Criar Unidade de Medida" />
     </form>
     </div>
 {% endblock %}

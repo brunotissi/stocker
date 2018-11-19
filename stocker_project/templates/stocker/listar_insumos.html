@@ -1,0 +1,19 @@
+{% extends 'stocker/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+Adicionar Categoria
+{% endblock %}
+
+{% block body_block %}
+    <h1>Listar Insumos</h1>
+        {% if insumos %}
+            <ul>
+                {% for insumo in insumos %}
+                    <li><a href="">{{ insumo.nome }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            Não há insumos cadastrados!
+        {% endif %}
+{% endblock %}
