@@ -29,26 +29,16 @@ class retirar_insumos(View):
 
         insumo = Insumo.objects.get(pk=id)
         form_insumo = EditInsumoForm(instance=insumo, data=request.POST)
-
+        qtd = int(request.POST['quantidade'])
+        qtd2 = int(insumo.quantidade)
+        qtd3 = qtd+qtd2
+        qtd4 = qtd2-qtd
         if form_insumo.is_valid():
-            insumo = form_insumo.save(commit=False)
-            nova_quantidade = int(request.POST['quantidade'])
-
-            quantidade_antiga = insumo.quantidade
-
-            print(quantidade_antiga, 'oi')
-
-            print(nova_quantidade, "______")
             if 'add-insumo' in request.POST:
-                print(nova_quantidade, "+++++")
-                qtd = quantidade_antiga + nova_quantidade
-                print(qtd)
-                # insumo.quantidade = nova_quantidade + insumo.quantidade
+                insumo.quantidade = qtd3
                 insumo.save()
-
             elif 'remove-insumo' in request.POST:
-                print(nova_quantidade, "----")
-                insumo.quantidade = nova_quantidade - insumo.quantidade
+                insumo.quantidade = qtd4
                 insumo.save()
 
 
