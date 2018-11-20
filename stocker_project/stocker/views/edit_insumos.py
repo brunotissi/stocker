@@ -21,6 +21,7 @@ class edit_insumos(LoginRequiredMixin, View):
         context_dict = {}
         context_dict['form'] = form_insumo
         context_dict['insumo'] = insumo
+        context_dict['quantidade_insumo'] = insumo.quantidade
 
         return render(request, self.template_name, context_dict)
 
@@ -37,8 +38,11 @@ class edit_insumos(LoginRequiredMixin, View):
                 insumo.quantidade = qtd3
                 insumo.save()
             elif 'remove-insumo' in request.POST:
-                insumo.quantidade = qtd4
+                if qtd4 < 0:
+                    insumo.quantidade = 0
+                else:
+                    insumo.quantidade = qtd4
                 insumo.save()
 
 
-            return HttpResponseRedirect(reverse('index'))
+            return HttpResponseRedirect(reverse('listar_insumos'))

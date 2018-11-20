@@ -12,12 +12,15 @@ Adicionar Categoria
         {% for hidden in form.hidden_fields %}
             {{ hidden }}
         {% endfor %}
+        <div style="display: none">
         {% for field in form.visible_fields %}
             {{ field.errors }}
             {{ field.help_text }}
             {{ field }}
         {% endfor %}
-       Quantidade: <input type="number" name="quantidade">
+        </div>
+       Informe a quantidade (disponível em estoque: {{ quantidade_insumo }}):<br/>
+        <input type="number" min=0 name="quantidade" /><br/>
     <input type="submit" name="add-insumo" value="Adicionar Insumo" />
     <input type="submit" name="remove-insumo" value="Retirar Insumo" />
      </form>
