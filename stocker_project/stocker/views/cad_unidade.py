@@ -21,6 +21,6 @@ class cad_unidade(LoginRequiredMixin, View):
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save(commit=True)
-            return HttpResponseRedirect(reverse('index'))
+            return HttpResponseRedirect(reverse('listar_insumos'))
 
         return render(request, self.template_name, {'form': form})
