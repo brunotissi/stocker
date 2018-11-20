@@ -7,22 +7,24 @@
     <link type="text/css" rel="stylesheet" href="{% static 'css/base.css' %}"/>
     <link type="text/css" rel="stylesheet" href="{% static 'semantic/dist/semantic.css' %}"/>
 	<title>
- 	Stocker
 	{% block title_block %}
+        Stocker
  	{% endblock %}
 	</title>
 </head>
 <body>
+    {% block user_options_block %}
     <div class="ui inverted segment menu-base">
         <div class="ui inverted secondary pointing menu">
-          <a class="active item" href="{% url 'index' %}">Home</a>
-          <a class="item" href="{% url 'cad_unidade' %}">Cadastrar Categorias</a>
-          <a class="item" href="{% url 'cad_insumos' %}">Cadastrar Insumos</a>
-          <a class="item" href="{% url 'listar_insumos' %}">Listar Insumos</a>
-          <a class="item" href="{% url 'auth_logout' %}?next=/stocker/">Sair</a>
+            <div id="stocker-logo">STOCKER</div>
+          <!-- <a class="active item" href="{% url 'index' %}">Home</a> -->
+            <a class="item" href="{% url 'cad_unidade' %}">Cadastrar Unidades</a>
+            <a class="item" href="{% url 'cad_insumos' %}">Cadastrar Insumos</a>
+            <a class="item" href="{% url 'listar_insumos' %}">Listar Insumos</a>
+            <a class="item" href="{% url 'auth_logout' %}?next=/stocker/">Sair</a>
         </div>
     </div>
-
+    {% endblock %}
     <div class="ui grid">
       <div class="sixteen wide column"></div>
       <div class="three wide column">

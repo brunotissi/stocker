@@ -4,6 +4,8 @@
 	Cadastro
 {% endblock %}
  {% block body_block %}
+	{% block user_options_block %}
+	{% endblock %}
 	<h1>Registre-se aqui</h1>
 	<form method="post" action=".">
 		{% csrf_token %}
