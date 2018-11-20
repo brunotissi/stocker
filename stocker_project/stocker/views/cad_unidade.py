@@ -5,9 +5,10 @@ from django.shortcuts import render
 from django.views.generic.base import View
 #from .login_required import LoginRequiredMixin
 from ..forms import UnidadeForm
+from .login_required import LoginRequiredMixin
 
 
-class cad_unidade(View):
+class cad_unidade(LoginRequiredMixin, View):
     form_class = UnidadeForm
     initial = {}
     template_name = 'stocker/cad_unidade.html'

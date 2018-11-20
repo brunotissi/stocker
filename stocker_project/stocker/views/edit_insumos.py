@@ -1,14 +1,13 @@
-from ..models import Insumo
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic.base import View
-#from .login_required import LoginRequiredMixin
 from ..forms import EditInsumoForm
 from ..models import Insumo
+from .login_required import LoginRequiredMixin
 
 
-class edit_insumos(View):
+class edit_insumos(LoginRequiredMixin, View):
     form_class = EditInsumoForm
     initial = {}
     template_name = 'stocker/edit_insumos.html'
