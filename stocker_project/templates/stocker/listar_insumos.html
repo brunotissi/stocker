@@ -6,14 +6,35 @@ Adicionar Categoria
 {% endblock %}
 
 {% block body_block %}
-    <h1>Listar Insumos</h1>
-        {% if insumos %}
-            <ul>
-                {% for insumo in insumos %}
-                    <li><a href="{% url 'edit_insumos' insumo.id %}">{{ insumo.nome }}</a></li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            Não há insumos cadastrados!
-        {% endif %}
+    <h1 class="ui block header">
+        Listagem de Insumos
+        <div class="ui basic segment">
+            <div class="sub header">Aqui estão os insumos que foram cadastrados.</div>
+        </div>
+    </h1>
+
+    {% if insumos %}
+        <table class="ui blue striped table">
+          <thead>
+            <tr>
+              <th>Insumo</th>
+              <th>Categoria</th>
+              <th>Quantidade</th>
+              <th>Add/Remover Qtde</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for insumo in insumos %}
+                <tr>
+                  <td><a href="{% url 'edit_insumos' insumo.id %}">{{ insumo.nome }}</a></td>
+                  <td>{{ insumo.unidade }}</td>
+                  <td>{{ insumo.quantidade }}</td>
+                  <td><a href="{% url 'edit_insumos' insumo.id %}" class="ui primary button">+/-</a></td>
+                </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    {% else %}
+        Não há insumos cadastrados!
+    {% endif %}
 {% endblock %}

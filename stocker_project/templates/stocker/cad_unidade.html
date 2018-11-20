@@ -6,19 +6,43 @@ Cadastro de Unidade de Medida
 {% endblock %}
 
 {% block body_block %}
-    <h1>Cadastro de Unidade de Medida</h1>
+    <h1 class="ui block header">
+        Cadastro de Unidade de Medida
+        <div class="ui basic segment">
+            <div class="sub header">Preencha o campo abaixo e cadastre sua nova Unidade de Medida.</div>
+        </div>
+    </h1>
     <div>
-    <form id="category_form" method="post" action="{%  url 'cad_unidade' %}">
-        {% csrf_token %}
-        {% for hidden in form.hidden_fields %}
-            {{ hidden }}
-        {% endfor %}
-        {% for field in form.visible_fields %}
-            {{ field.errors }}
-            {{ field.help_text }}
-            {{ field }}
-        {% endfor %}
-        <input type="submit" name="submit" value="Criar Unidade de Medida" />
+        <br/><br/><br/>
+    <form id="category_form" method="post" class="ui form" action="{%  url 'cad_unidade' %}">
+        <div class="ui grid">
+            <div class="four wide column"></div>
+            <div class="eight wide column">
+                {% csrf_token %}
+                {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                {% endfor %}
+
+                {% for field in form %}
+                    <div class="fieldWrapper">
+                        {{ field.errors }}
+                        {{ field.label_tag }} {{ field }}
+                        {% if field.help_text %}
+                        <p class="help">{{ field.help_text|safe }}</p>
+                        {% endif %}
+                    </div>
+                <br/>
+                {% endfor %}
+            </div>
+            <div class="four wide column"></div>
+            <div class="five wide column"></div>
+            <div class="six wide column">
+                <div class="ui basic segment center aligned">
+                <input type="submit" name="submit" class="ui primary button" value="Criar Unidade de Medida" />
+                </div>
+            </div>
+            <div class="five wide column"></div>
+        </div>
     </form>
     </div>
 {% endblock %}
