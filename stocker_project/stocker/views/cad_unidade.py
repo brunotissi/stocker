@@ -1,14 +1,14 @@
-from ..models import Unidade
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic.base import View
-#from .login_required import LoginRequiredMixin
 from ..forms import UnidadeForm
 from .login_required import LoginRequiredMixin
+from .group_required import GroupRequiredMixin
 
 
-class cad_unidade(LoginRequiredMixin, View):
+class cad_unidade(LoginRequiredMixin, GroupRequiredMixin, View):
+    group_required = u"gerentes"
     form_class = UnidadeForm
     initial = {}
     template_name = 'stocker/cad_unidade.html'
