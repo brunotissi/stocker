@@ -6,22 +6,44 @@ Criar Insumo
 {% endblock %}
 
 {% block body_block %}
-    <h1>Criar Insumo</h1>
-    <div>
-    <form id="category_form" method="post" class="ui form" action="{%  url 'cad_insumos' %}">
-        {% csrf_token %}
-        {% for hidden in form.hidden_fields %}
-            {{ hidden }}
-        {% endfor %}
-        {% for field in form.visible_fields %}
-            {{ field.errors }}
-            {{ field.help_text }}
-            {{ field }}
-        {% endfor %}
-        <br/>
+    <h1 class="ui block header">
+      Criar Insumo
         <div class="ui basic segment">
-        <input type="submit" name="submit" class="ui primary button" value="Criar Insumo" />
+            <div class="sub header">Preencha os campos e cadastre seu novo insumo.</div>
         </div>
+    </h1>
+    <div>
+        <br/><br/><br/>
+    <form id="category_form" method="post" class="ui form" action="{%  url 'cad_insumos' %}">
+        <div class="ui grid">
+            <div class="four wide column"></div>
+            <div class="eight wide column">
+                {% csrf_token %}
+                {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                {% endfor %}
+
+                {% for field in form %}
+                    <div class="fieldWrapper">
+                        {{ field.errors }}
+                        {{ field.label_tag }} {{ field }}
+                        {% if field.help_text %}
+                        <p class="help">{{ field.help_text|safe }}</p>
+                        {% endif %}
+                    </div>
+                <br/>
+                {% endfor %}
+            </div>
+            <div class="four wide column"></div>
+            <div class="five wide column"></div>
+            <div class="six wide column">
+                <div class="ui basic segment center aligned">
+                <input type="submit" name="submit" class="ui primary button" value="Criar Insumo" />
+                </div>
+            </div>
+            <div class="five wide column"></div>
+        </div>
+
 
     </form>
     </div>
