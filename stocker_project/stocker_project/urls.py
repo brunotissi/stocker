@@ -10,6 +10,7 @@ class MyRegistrationView(RegistrationView):
     def get_sucess_url(self, user):
         return '/stocker/'
 
+
 urlpatterns = [
     url(r'^$', views.redirect_view, name='redirect_view'),
     url(r'^stocker/', include('stocker.urls')),

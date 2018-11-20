@@ -21,6 +21,13 @@ class InsumoForm(forms.ModelForm):
 		fields = ('nome','quantidade', 'unidade', )
 
 
+class EditInsumoForm(forms.ModelForm):
+	quantidade = forms.IntegerField(label='Quantidade atual')
+	class Meta:
+		model = Insumo
+		fields = ('quantidade',)
+
+
 class UnidadeForm(forms.ModelForm):
 	nome = forms.CharField(label='Nome da Unidade de Medida', required=True, widget=forms.TextInput(attrs={'placeholder': 'Nome da Unidade de Medida'}))
 
