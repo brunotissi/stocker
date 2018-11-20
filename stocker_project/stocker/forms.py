@@ -22,6 +22,7 @@ class InsumoForm(forms.ModelForm):
 
 
 class EditInsumoForm(forms.ModelForm):
+	quantidade = forms.IntegerField(label='Quantidade atual')
 	class Meta:
 		model = Insumo
 		fields = ('quantidade',)

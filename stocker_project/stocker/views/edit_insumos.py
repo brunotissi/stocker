@@ -13,15 +13,11 @@ class edit_insumos(LoginRequiredMixin, View):
     template_name = 'stocker/edit_insumos.html'
 
     def get(self, request, id=None, *args, **kwargs):
-
         insumo = Insumo.objects.get(pk=id)
-
         form_insumo = EditInsumoForm(instance=insumo)
-
         context_dict = {}
         context_dict['form'] = form_insumo
         context_dict['insumo'] = insumo
-        context_dict['quantidade_insumo'] = insumo.quantidade
 
         return render(request, self.template_name, context_dict)
 

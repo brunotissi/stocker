@@ -11,6 +11,7 @@ class MyRegistrationView(RegistrationView):
     def get_sucess_url(self, user):
         return '/stocker/'
 
+
 urlpatterns = [
 ]
 

@@ -1,20 +1,58 @@
 {% extends 'stocker/base.html' %}
 {% load staticfiles %}
- {% block title_block %}
+
+{% block title_block %}
 	Login
 {% endblock %}
- {% block body_block %}
-  {% block user_options_block %}
-  {% endblock %}
-	<h1>Login</h1>
-	<form id="login_form" method="post" action=".">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" value="Entrar"/>
-		<input type="hidden" name="next" value="{{ next }}"/>
-	</form>
-	<p>
-		Ainda não está Registrado?
-		<a href="{% url 'registration_register' %}">Cadastre-se</a>
-	</p>
+{% block body_block %}
+	{% block user_options_block %}
+	{% endblock %}
+
+	<h1 class="ui block header">
+		Login
+		<div class="ui basic segment">
+			<div class="sub header">Informe seus dados para acessar o sistema.</div>
+		</div>
+		</h1><br/>
+		<form id="login_form" method="post" class="ui form" action=".">
+			<div class="ui grid">
+				<div class="four wide column"></div>
+				<div class="eight wide column">
+					{% csrf_token %}
+					{% for hidden in form.hidden_fields %}
+						{{ hidden }}
+					{% endfor %}
+
+					{% for field in form %}
+						<div class="fieldWrapper">
+							{{ field.errors }}
+							{{ field.label_tag }} {{ field }}
+							{% if field.help_text %}
+							<p class="help">{{ field.help_text|safe }}</p>
+							{% endif %}
+						</div>
+					<br/>
+					{% endfor %}
+				</div>
+				<div class="four wide column"></div>
+				<div class="five wide column"></div>
+				<div class="six wide column">
+					<div class="ui basic segment center aligned">
+					<input type="submit" value="Entrar" class="ui primary button"/>
+					<input type="hidden" name="next" value="{{ next }}"/>
+					</div>
+				</div>
+				<div class="five wide column"></div>
+			</div>
+		</form>
+		<div class="ui grid">
+				<div class="five wide column"></div>
+				<div class="six wide column">
+					<p>
+						Ainda não está Registrado?
+						<a href="{% url 'registration_register' %}">Cadastre-se</a>
+					</p>
+				</div>
+				<div class="five wide column"></div>
+		</div>
 {% endblock %}

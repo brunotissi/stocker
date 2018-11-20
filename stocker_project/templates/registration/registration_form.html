@@ -3,13 +3,48 @@
  {% block title_block %}
 	Cadastro
 {% endblock %}
+
  {% block body_block %}
 	{% block user_options_block %}
 	{% endblock %}
-	<h1>Registre-se aqui</h1>
-	<form method="post" action=".">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" value="Cadastrar"/>
-	</form>
+
+	<h1 class="ui block header">
+      Registre-se
+        <div class="ui basic segment">
+            <div class="sub header">Preencha seus dados.</div>
+        </div>
+    </h1>
+	<div>
+		<br/>
+		<form id="category_form" method="post" class="ui form" action=".">
+			<div class="ui grid">
+				<div class="four wide column"></div>
+				<div class="eight wide column">
+					{% csrf_token %}
+					{% for hidden in form.hidden_fields %}
+						{{ hidden }}
+					{% endfor %}
+
+					{% for field in form %}
+						<div class="fieldWrapper">
+							{{ field.errors }}
+							{{ field.label_tag }} {{ field }}
+							{% if field.help_text %}
+							<p class="help">{{ field.help_text|safe }}</p>
+							{% endif %}
+						</div>
+					<br/>
+					{% endfor %}
+				</div>
+				<div class="four wide column"></div>
+				<div class="five wide column"></div>
+				<div class="six wide column">
+					<div class="ui basic segment center aligned">
+					<input type="submit" name="submit" class="ui primary button" value="Criar usuário" />
+					</div>
+				</div>
+				<div class="five wide column"></div>
+			</div>
+		</form>
+	</div>
 {% endblock %}

@@ -1,5 +1,5 @@
 .menu-base {
-    min-height: 10% !important;
+    min-height: 7% !important;
     margin: 0 !important;
     border-radius: 0 !important;
 }
@@ -19,5 +19,5 @@
 }
 
 #stocker-logo {
-    font-size: 45px;
+    font-size: 35px;
 }
