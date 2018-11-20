@@ -12,21 +12,14 @@
       <div class="row">
         <div class="col-sm">
           <p class="lead">
-            Se você é novo no nosso site <strong>Cadastre-se</strong>!
+            Se você é novo no nosso site <strong><a href="{% url 'registration_register' %}">Cadastre-se</a></strong>!
           </p>
         </div>
         <div class="col-sm">
           <p class="lead">
-            Se você já é cadastrado é só <strong>Entrar</strong>!
+            Se você já é cadastrado é só <strong><a href="{% url 'auth_login' %}">Entrar</a></strong>!
           </p>
         </div>
       </div>
     </div>
-
-	<div>
-		<ul>
-			<li><a href="{% url 'register' %}">Cadastro</a></li>
-			<li><a href="{% url 'login' %}">Login</a></li>
-		</ul>
-	</div>
 {% endblock body_block %}

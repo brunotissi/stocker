@@ -13,6 +13,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -92,6 +93,21 @@ USE_L10N = True
 
 USE_TZ = True
 
+#DJANGO REGISTRATION REDUX
+
+REGISTRATION_OPEN = True
+
+ACCOUNT_ACTIVATION_DAYS = 7
+
+REGISTRATION_AUTO_LOGIN = True
+
+ACCOUNT_AUTHENTICATED_REGISTRATION_REDIRECTS = True
+
+LOGIN_REDIRECT_URL = '/stocker/'
+
+LOGIN_URL = '/accounts/login/'
+
+####
 
 STATICFILES_DIRS = [STATIC_DIR, ]
 STATIC_URL = '/static/'
