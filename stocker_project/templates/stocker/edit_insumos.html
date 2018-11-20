@@ -6,22 +6,43 @@ Adicionar Categoria
 {% endblock %}
 
 {% block body_block %}
-    <h1>Editar Insumo</h1>
-    <form id="category_form" method="post" action="{%  url 'edit_insumos' insumo.id %}">
-            {% csrf_token %}
-        {% for hidden in form.hidden_fields %}
-            {{ hidden }}
-        {% endfor %}
-        <div style="display: none">
-        {% for field in form.visible_fields %}
-            {{ field.errors }}
-            {{ field.help_text }}
-            {{ field }}
-        {% endfor %}
+    <h1 class="ui block header">
+      Editar Insumo
+        <div class="ui basic segment">
+            <div class="sub header">Preencha a quantidade que deseja adicionar ou remover do seu insumo.</div>
         </div>
-       Informe a quantidade (disponível em estoque: {{ quantidade_insumo }}):<br/>
-        <input type="number" min=1 name="quantidade" /><br/>
-    <input type="submit" name="add-insumo" value="Adicionar Insumo" />
-    <input type="submit" name="remove-insumo" value="Retirar Insumo" />
-     </form>
+    </h1>
+    <div>
+    <br/>
+    <form id="category_form" method="post" class="ui form" action="{%  url 'edit_insumos' insumo.id %}">
+        <div class="ui grid">
+            <div class="four wide column"></div>
+            <div class="eight wide column">
+                {% csrf_token %}
+                  <label>Insumo:</label>
+                  <div class="ui blue segment">{{ insumo.nome }}</div>
+                  <label>Unidade de Medida:</label>
+                  <div class="ui blue segment">{{ insumo.unidade }}</div>
+                  <label>Quantidade atual no seu estoque:</label>
+                  <div class="ui blue segment">{{ insumo.quantidade }}</div>
+                <label><strong>Informe a quantidade a ser inserida ou retirada:</strong></label>
+                <input type="number" min=1 name="quantidade" /><br/>
+            </div>
+            <div class="four wide column"></div>
+
+            <div class="two wide column"></div>
+            <div class="six wide column">
+                <div class="ui basic segment center aligned">
+                    <input type="submit" name="remove-insumo" value="Retirar Insumo" class="ui red button"/>
+                </div>
+            </div>
+            <div class="six wide column">
+                <div class="ui basic segment center aligned">
+                    <input type="submit" name="add-insumo" value="Adicionar Insumo" class="ui green button"/>
+                </div>
+            </div>
+            <div class="two wide column"></div>
+        </div>
+    </form>
+    </div>
 {% endblock %}

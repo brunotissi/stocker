@@ -16,7 +16,7 @@
     {% block user_options_block %}
     <div class="ui inverted segment menu-base">
         <div class="ui inverted secondary pointing menu">
-            <div id="stocker-logo">STOCKER</div>
+            <div id="stocker-logo"><h1>STOCKER</h1></div>
           <!-- <a class="active item" href="{% url 'index' %}">Home</a> -->
             <a class="item" href="{% url 'cad_unidade' %}">Cadastrar Unidades</a>
             <a class="item" href="{% url 'cad_insumos' %}">Cadastrar Insumos</a>
@@ -29,17 +29,6 @@
       <div class="sixteen wide column"></div>
       <div class="three wide column">
           {% block sidebar %}
-          <div class="ui blue vertical menu">
-              <a class="active item">
-                Home
-              </a>
-              <a class="item">
-                Messages
-              </a>
-              <a class="item">
-                Friends
-              </a>
-          </div>
           {% endblock %}
       </div>
       <div class="one wide column"></div>
