@@ -13,18 +13,20 @@
 	</title>
 </head>
 <body>
-    {% block user_options_block %}
+
     <div class="ui inverted segment menu-base">
         <div class="ui inverted secondary pointing menu">
             <div id="stocker-logo"><h1>STOCKER</h1></div>
+            {% block user_options_block %}
           <!-- <a class="active item" href="{% url 'index' %}">Home</a> -->
             <a class="item" href="{% url 'cad_unidade' %}">Cadastrar Unidades</a>
             <a class="item" href="{% url 'cad_insumos' %}">Cadastrar Insumos</a>
             <a class="item" href="{% url 'listar_insumos' %}">Listar Insumos</a>
             <a class="item" href="{% url 'auth_logout' %}?next=/stocker/">Sair</a>
+             {% endblock %}
         </div>
     </div>
-    {% endblock %}
+
     <div class="ui grid">
       <div class="sixteen wide column"></div>
       <div class="three wide column">

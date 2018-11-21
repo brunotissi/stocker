@@ -7,8 +7,8 @@ from .login_required import LoginRequiredMixin
 from .group_required import GroupRequiredMixin
 
 
-class cad_unidade(LoginRequiredMixin, GroupRequiredMixin, View):
-    group_required = u"gerentes"
+class cad_unidade(LoginRequiredMixin, View):
+    #group_required = u'gerentes'
     form_class = UnidadeForm
     initial = {}
     template_name = 'stocker/cad_unidade.html'

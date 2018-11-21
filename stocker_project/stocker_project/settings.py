@@ -113,7 +113,7 @@ REGISTRATION_AUTO_LOGIN = True
 
 ACCOUNT_AUTHENTICATED_REGISTRATION_REDIRECTS = True
 
-LOGIN_REDIRECT_URL = '/stocker/'
+LOGIN_REDIRECT_URL = '/stocker/listar_insumos'
 
 LOGIN_URL = '/accounts/login/'
 

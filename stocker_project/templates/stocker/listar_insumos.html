@@ -18,18 +18,20 @@ Adicionar Categoria
           <thead>
             <tr>
               <th>Insumo</th>
-              <th>Categoria</th>
               <th>Quantidade</th>
-              <th>Add/Remover Qtde</th>
+              <th>Unidade</th>
+              <th>Adicionar</th>
+              <th>Retirar</th>
             </tr>
           </thead>
           <tbody>
             {% for insumo in insumos %}
                 <tr>
                   <td><a href="{% url 'edit_insumos' insumo.id %}">{{ insumo.nome }}</a></td>
-                  <td>{{ insumo.unidade }}</td>
                   <td>{{ insumo.quantidade }}</td>
-                  <td><a href="{% url 'edit_insumos' insumo.id %}" class="ui primary button">+/-</a></td>
+                  <td>{{ insumo.unidade }}</td>
+                  <td><a href="{% url 'edit_insumos' insumo.id %}" class="ui primary button">+</a></td>
+                  <td><a href="{% url 'edit_insumos' insumo.id %}" class="ui red button">-</a></td>
                 </tr>
             {% endfor %}
           </tbody>
