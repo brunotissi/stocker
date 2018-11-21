@@ -2,14 +2,15 @@
 {% load staticfiles %}
 
 {% block title_block %}
-Adicionar Categoria
+Listagem de Insumos
 {% endblock %}
 
 {% block body_block %}
     <h1 class="ui block header">
         Listagem de Insumos
         <div class="ui basic segment">
-            <div class="sub header">Aqui estão os insumos que foram cadastrados.</div>
+            <div class="sub header">Aqui estão os insumos que foram cadastrados. Clique nas opções para adicionar ou
+                retirar quantidade do seu insumo.</div>
         </div>
     </h1>
 
@@ -19,7 +20,7 @@ Adicionar Categoria
             <tr>
               <th>Insumo</th>
               <th>Quantidade</th>
-              <th>Unidade</th>
+              <th>Unidade de Medida</th>
               <th>Adicionar</th>
               <th>Retirar</th>
             </tr>
@@ -27,11 +28,11 @@ Adicionar Categoria
           <tbody>
             {% for insumo in insumos %}
                 <tr>
-                  <td><a href="{% url 'edit_insumos' insumo.id %}">{{ insumo.nome }}</a></td>
+                  <td>{{ insumo.nome }}</td>
                   <td>{{ insumo.quantidade }}</td>
                   <td>{{ insumo.unidade }}</td>
-                  <td><a href="{% url 'edit_insumos' insumo.id %}" class="ui primary button">+</a></td>
-                  <td><a href="{% url 'edit_insumos' insumo.id %}" class="ui red button">-</a></td>
+                  <td><a href="{% url 'add_insumos' insumo.id %}" class="ui primary button">+</a></td>
+                  <td><a href="{% url 'retirar_insumos' insumo.id %}" class="ui red button">-</a></td>
                 </tr>
             {% endfor %}
           </tbody>

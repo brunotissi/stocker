@@ -2,19 +2,19 @@
 {% load staticfiles %}
 
 {% block title_block %}
-Adicionar Categoria
+Adição de Insumos
 {% endblock %}
 
 {% block body_block %}
     <h1 class="ui block header">
-      Editar Insumo
+        Adicionar Quantidade de Insumo
         <div class="ui basic segment">
             <div class="sub header">Preencha a quantidade que deseja adicionar ou remover do seu insumo.</div>
         </div>
     </h1>
     <div>
     <br/>
-    <form id="category_form" method="post" class="ui form" action="{%  url 'edit_insumos' insumo.id %}">
+    <form id="category_form" method="post" class="ui form" action="{%  url 'add_insumos' insumo.id %}">
         <div class="ui grid">
             <div class="four wide column"></div>
             <div class="eight wide column">
@@ -25,23 +25,18 @@ Adicionar Categoria
                   <div class="ui blue segment">{{ insumo.unidade }}</div>
                   <label>Quantidade atual no seu estoque:</label>
                   <div class="ui blue segment">{{ insumo.quantidade }}</div>
-                <label><strong>Informe a quantidade a ser inserida ou retirada:</strong></label>
+                <label><strong>Informe a quantidade que deseja inserir:</strong></label>
                 <input type="number" min=1 name="quantidade" /><br/>
             </div>
             <div class="four wide column"></div>
 
-            <div class="two wide column"></div>
-            <div class="six wide column">
-                <div class="ui basic segment center aligned">
-                    <input type="submit" name="remove-insumo" value="Retirar Insumo" class="ui red button"/>
-                </div>
-            </div>
+            <div class="five wide column"></div>
             <div class="six wide column">
                 <div class="ui basic segment center aligned">
                     <input type="submit" name="add-insumo" value="Adicionar Insumo" class="ui green button"/>
                 </div>
             </div>
-            <div class="two wide column"></div>
+            <div class="five wide column"></div>
         </div>
     </form>
     </div>
