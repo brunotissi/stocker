@@ -4,9 +4,11 @@ from django.shortcuts import render
 from django.views.generic.base import View
 from ..forms import InsumoForm
 from .login_required import LoginRequiredMixin
+from .group_required import GroupRequiredMixin
 
 
-class cad_insumos(LoginRequiredMixin, View):
+class cad_insumos(GroupRequiredMixin, LoginRequiredMixin, View):
+    group_required = 'gerentes'
     form_class = InsumoForm
     initial = {}
     template_name = 'stocker/cad_insumos.html'

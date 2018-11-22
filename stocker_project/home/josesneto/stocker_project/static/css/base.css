@@ -1,0 +1,23 @@
+.menu-base {
+    min-height: 7% !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+.conteudo-central{
+    min-height: 650px !important;
+}
+
+.footer-base {
+    min-height: 10% !important;
+    border-radius: 0 !important;
+    margin-bottom:0 !important;
+    position:absolute !important;
+    bottom:0 !important;
+    width:100% !important;
+    text-align: center !important;
+}
+
+#stocker-logo {
+    font-size: 35px;
+}

@@ -13,6 +13,7 @@ class MyRegistrationView(RegistrationView):
 
 
 urlpatterns = [
+    url(r'^i18n/', include('django.conf.urls.i18n')),
 ]
 
 urlpatterns += i18n_patterns(
@@ -22,4 +23,5 @@ urlpatterns += i18n_patterns(
     url(r'^stocker/', include('stocker.urls')),
     url(r'^accounts/register/$', MyRegistrationView.as_view(), name='registration_register'),
     url(r'accounts/', include('registration.backends.simple.urls')),
+
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
