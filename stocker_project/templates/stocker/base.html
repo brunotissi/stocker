@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load i18n %}
 {% load staticfiles %}
 
 <html>
@@ -19,11 +20,10 @@
         <div class="ui inverted secondary pointing menu">
             <div id="stocker-logo"><h1>STOCKER</h1></div>
             {% block user_options_block %}
-          <!-- <a class="active item" href="{% url 'index' %}">Home</a> -->
-            <a class="item" href="{% url 'cad_unidade' %}">Cadastrar Unidades</a>
-            <a class="item" href="{% url 'cad_insumos' %}">Cadastrar Insumos</a>
-            <a class="item" href="{% url 'listar_insumos' %}">Listar Insumos</a>
-            <a class="item" href="{% url 'auth_logout' %}?next=/stocker/">Sair</a>
+            <a class="item" href="{% url 'cad_unidade' %}">{% blocktrans %}Cadastrar Unidades{% endblocktrans %}</a>
+            <a class="item" href="{% url 'cad_insumos' %}">{% blocktrans %}Cadastrar Insumos{% endblocktrans %}</a>
+            <a class="item" href="{% url 'listar_insumos' %}">{% blocktrans %}Listar Insumos{% endblocktrans %}</a>
+            <a class="item" href="{% url 'auth_logout' %}?next=/stocker/">{% blocktrans %}Sair{% endblocktrans %}</a>
              {% endblock %}
         </div>
     </div>
@@ -42,7 +42,7 @@
 
        <div class="sixteen wide column">
            <footer class="ui inverted segment footer-base">
-             <p>Stocker by alunos do BSI-6 de 2018 - Ana, Bruno, Igor, José</p>
+             <p>{% blocktrans %}Stocker por alunos do BSI-6 de 2018 - Ana, Bruno, Igor, José{% endblocktrans %}</p>
            </footer>
        </div>
     </div>

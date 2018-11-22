@@ -1,7 +1,8 @@
 {% extends 'stocker/base.html' %}
+{% load i18n %}
 {% load staticfiles %}
  {% block title_block %}
-	Cadastro
+	{% blocktrans %}Cadastro{% endblocktrans %}
 {% endblock %}
 
  {% block body_block %}
@@ -9,9 +10,9 @@
 	{% endblock %}
 
 	<h1 class="ui block header">
-      Registre-se
+      {% blocktrans %}Registre-se{% endblocktrans %}
         <div class="ui basic segment">
-            <div class="sub header">Preencha seus dados.</div>
+            <div class="sub header">{% blocktrans %}Preencha seus dados.{% endblocktrans %}</div>
         </div>
     </h1>
 	<div>

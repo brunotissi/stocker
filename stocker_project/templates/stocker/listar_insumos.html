@@ -1,16 +1,17 @@
 {% extends 'stocker/base.html' %}
+{% load i18n %}
 {% load staticfiles %}
 
 {% block title_block %}
-Listagem de Insumos
+{% blocktrans %}Listagem de Insumos{% endblocktrans %}
 {% endblock %}
 
 {% block body_block %}
     <h1 class="ui block header">
-        Listagem de Insumos
+        {% blocktrans %}Listagem de Insumos{% endblocktrans %}
         <div class="ui basic segment">
-            <div class="sub header">Aqui estão os insumos que foram cadastrados. Clique nas opções para adicionar ou
-                retirar quantidade do seu insumo.</div>
+            <div class="sub header">{% blocktrans %}Aqui estão os insumos que foram cadastrados.
+                Clique nas opções para adicionar ou retirar quantidade do seu insumo.{% endblocktrans %}</div>
         </div>
     </h1>
 
@@ -18,11 +19,11 @@ Listagem de Insumos
         <table class="ui blue striped table">
           <thead>
             <tr>
-              <th>Insumo</th>
-              <th>Quantidade</th>
-              <th>Unidade de Medida</th>
-              <th>Adicionar</th>
-              <th>Retirar</th>
+              <th>{% blocktrans %}Insumo{% endblocktrans %}</th>
+              <th>{% blocktrans %}Quantidade{% endblocktrans %}</th>
+              <th>{% blocktrans %}Unidade de Medida{% endblocktrans %}</th>
+              <th>{% blocktrans %}Adicionar{% endblocktrans %}</th>
+              <th>{% blocktrans %}Retirar{% endblocktrans %}</th>
             </tr>
           </thead>
           <tbody>
@@ -38,6 +39,6 @@ Listagem de Insumos
           </tbody>
         </table>
     {% else %}
-        Não há insumos cadastrados!
+        {% blocktrans %}Não há insumos cadastrados!{% endblocktrans %}
     {% endif %}
 {% endblock %}

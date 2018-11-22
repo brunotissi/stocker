@@ -1,15 +1,16 @@
 {% extends 'stocker/base.html' %}
+{% load i18n %}
 {% load staticfiles %}
 
 {% block title_block %}
-Cadastro de Unidade de Medida
+{% blocktrans %}Cadastro de Unidade de Medida{% endblocktrans %}
 {% endblock %}
 
 {% block body_block %}
     <h1 class="ui block header">
-        Cadastro de Unidade de Medida
+        {% blocktrans %}Cadastro de Unidade de Medida{% endblocktrans %}
         <div class="ui basic segment">
-            <div class="sub header">Preencha o campo abaixo e cadastre sua nova Unidade de Medida.</div>
+            <div class="sub header">{% blocktrans %}Preencha o campo abaixo e cadastre sua nova Unidade de Medida.{% endblocktrans %}</div>
         </div>
     </h1>
     <div>

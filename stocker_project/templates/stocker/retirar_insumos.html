@@ -1,15 +1,16 @@
 {% extends 'stocker/base.html' %}
+{% load i18n %}
 {% load staticfiles %}
 
 {% block title_block %}
-Retirada de Insumos
+{% blocktrans %}Retirada de Insumos{% endblocktrans %}
 {% endblock %}
 
 {% block body_block %}
     <h1 class="ui block header">
-        Retirar Quantidade de Insumo
+        {% blocktrans %}Retirar Quantidade de Insumo{% endblocktrans %}
         <div class="ui basic segment">
-            <div class="sub header">Preencha a quantidade que deseja retirar do seu insumo.</div>
+            <div class="sub header">{% blocktrans %}Preencha a quantidade que deseja retirar do seu insumo.{% endblocktrans %}</div>
         </div>
     </h1>
     <div>
@@ -19,13 +20,13 @@ Retirada de Insumos
             <div class="four wide column"></div>
             <div class="eight wide column">
                 {% csrf_token %}
-                  <label>Insumo:</label>
+                  <label>{% blocktrans %}Insumo:{% endblocktrans %}</label>
                   <div class="ui blue segment">{{ insumo.nome }}</div>
-                  <label>Unidade de Medida:</label>
+                  <label>{% blocktrans %}Unidade de Medida:{% endblocktrans %}</label>
                   <div class="ui blue segment">{{ insumo.unidade }}</div>
-                  <label>Quantidade atual no seu estoque:</label>
+                  <label>{% blocktrans %}Quantidade atual no seu estoque:{% endblocktrans %}</label>
                   <div class="ui blue segment">{{ insumo.quantidade }}</div>
-                <label><strong>Informe a quantidade que deseja retirar:</strong></label>
+                <label><strong>{% blocktrans %}Informe a quantidade que deseja retirar:{% endblocktrans %}</strong></label>
                 <input type="number" min=1 name="quantidade" /><br/>
             </div>
             <div class="four wide column"></div>

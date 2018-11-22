@@ -1,15 +1,16 @@
 {% extends 'stocker/base.html' %}
+{% load i18n %}
 {% load staticfiles %}
 
 {% block title_block %}
-Criar Insumo
+{% blocktrans %}Criar Insumo{% endblocktrans %}
 {% endblock %}
 
 {% block body_block %}
     <h1 class="ui block header">
-      Criar Insumo
+      {% blocktrans %}Criar Insumo{% endblocktrans %}
         <div class="ui basic segment">
-            <div class="sub header">Preencha os campos e cadastre seu novo insumo.</div>
+            <div class="sub header">{% blocktrans %}Preencha os campos e cadastre seu novo insumo.{% endblocktrans %}</div>
         </div>
     </h1>
     <div>

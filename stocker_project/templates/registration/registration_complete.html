@@ -1,5 +1,6 @@
 {% extends "stocker/base.html" %}
+{% load i18n %}
 {% block body_block %}
-<h1>Cadastro completo</h1>
-<p>Agora você está registrado e pode utilizar o Stocker!</p>
+<h1>{% blocktrans %}Cadastro completo{% endblocktrans %}</h1>
+<p>{% blocktrans %}Agora você está registrado e pode utilizar o Stocker!{% endblocktrans %}</p>
 {% endblock %}
