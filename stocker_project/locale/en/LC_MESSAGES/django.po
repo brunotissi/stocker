@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-21 22:03-0200\n"
+"PO-Revision-Date: 2018-11-21 22:11-0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"X-Generator: Poedit 2.2\n"
+
+#: .\stocker_project\settings.py:44
+msgid "English"
+msgstr ""
+
+#: .\stocker_project\settings.py:45
+msgid "Português"
+msgstr ""
+
+#: .\templates\stocker\index.html:14
+msgid "Bem-vindo ao Stocker!"
+msgstr "Welcome to Stocker!"
+
+#: .\templates\stocker\index.html:15
+msgid " Sistema de Gestão para Estoques."
+msgstr " Inventory management system."
+
+#: .\templates\stocker\index.html:20
+msgid "Ou"
+msgstr "Or"
+
+#: .\templates\stocker\index.html:26
+msgid "Se você é novo no nosso site"
+msgstr "If you are new to the site"
+
+#: .\templates\stocker\index.html:28
+msgid "Cadastre-se"
+msgstr "Register"
+
+#: .\templates\stocker\index.html:34
+msgid "Se você já é cadastrado é só"
+msgstr "If you already have an account"
+
+#: .\templates\stocker\index.html:36
+msgid "Entrar"
+msgstr "Login"

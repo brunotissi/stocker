@@ -1,7 +1,9 @@
 {% extends 'stocker/base.html' %}
+{% load i18n %}
 {% load staticfiles %}
 
 {% block title_block %}
+  Stocker
 {% endblock %}
 
 {% block body_block %}
@@ -9,29 +11,29 @@
   {% endblock %}
         <br/>
       <div class="ui basic segment">
-        <h1 class="center aligned">Bem-vindo ao Stocker!</h1>
-        <h4>Sistema de Gestão para Estoques.</h4>
+        <h1 class="center aligned">{% trans "Bem-vindo ao Stocker!"%}</h1>
+        <h4>{% blocktrans %} Sistema de Gestão para Estoques.{% endblocktrans %}</h4>
       </div>
         <br/><br/>
     <div class="ui placeholder segment">
       <div class="ui two column stackable center aligned grid">
-        <div class="ui vertical divider">Ou</div>
+        <div class="ui vertical divider">{% blocktrans %}Ou{% endblocktrans %}</div>
         <div class="middle aligned row">
           <div class="column">
             <div class="ui icon header">
               <i class="signup icon"></i>
             </div>
-            <h3>Se você é novo no nosso site</h3>
+            <h3>{% blocktrans %}Se você é novo no nosso site{% endblocktrans %}</h3>
                 <a href="{% url 'registration_register' %}" class="ui primary labeled icon button">
-                   <i class="signup icon"></i>Cadastre-se</a>
+                   <i class="signup icon"></i>{% blocktrans %}Cadastre-se{% endblocktrans %}</a>
           </div>
           <div class="column">
             <div class="ui icon header">
               <i class="sign in alternate icon"></i>
             </div>
-            <h3>Se você já é cadastrado é só</h3>
+            <h3>{% blocktrans %}Se você já é cadastrado é só{% endblocktrans %}</h3>
                 <a href="{% url 'auth_login' %}" class="ui labeled icon button">
-                  <i class="sign in alternate icon"></i>Entrar</a>
+                  <i class="sign in alternate icon"></i>{% blocktrans %}Entrar{% endblocktrans %}</a>
           </div>
         </div>
       </div>

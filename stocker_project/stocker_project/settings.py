@@ -42,6 +42,7 @@ LANGUAGE_CODE = 'pt-br'
 USE_I18N = True
 LANGUAGES = (
     ('en', _('English')),
+    ('pt-br', _('Português')),
 )
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
