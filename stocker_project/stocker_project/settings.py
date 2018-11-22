@@ -53,7 +53,7 @@ USE_L10N = True
 
 # Time Zone support
 USE_TZ = True
-TIME_ZONE = 'Europe/Madrid'
+TIME_ZONE = 'Brazil/East'
 
 
 TEMPLATES = [
