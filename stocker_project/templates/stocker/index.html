@@ -15,6 +15,7 @@
         <h4>{% blocktrans %} Sistema de Gestão para Estoques.{% endblocktrans %}</h4>
       </div>
         <br/><br/>
+    {% if not user.is_authenticated %}
     <div class="ui placeholder segment">
       <div class="ui two column stackable center aligned grid">
         <div class="ui vertical divider">{% blocktrans %}Ou{% endblocktrans %}</div>
@@ -38,7 +39,10 @@
         </div>
       </div>
     </div>
-
-
-
+    {% else %}
+    <div class="ui center aligned segment">
+      <p>Clique aqui e vá para a listagem de insumos: <a href="{% url 'listar_insumos' %}">Listar Insumos</a>
+      </p>
+    </div>
+    {% endif %}
 {% endblock body_block %}

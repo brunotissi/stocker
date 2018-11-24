@@ -9,6 +9,7 @@
 	{% block user_options_block %}
 	{% endblock %}
 
+{% if not user.is_authenticated %}
 	<h1 class="ui block header">
 		Login
 		<div class="ui basic segment">
@@ -56,4 +57,10 @@
 				</div>
 				<div class="five wide column"></div>
 		</div>
+	{% else %}
+		<div class="ui center aligned segment">
+		  <p>Clique aqui e vá para a listagem de insumos: <a href="{% url 'listar_insumos' %}">Listar Insumos</a>
+		  </p>
+		</div>
+    {% endif %}
 {% endblock %}
