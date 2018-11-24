@@ -6,6 +6,20 @@
 Welcome to Stocker's documentation!
 ===================================
 
+This is an awesome **Django Project** for stock management!!
+
+With this system you can management your stock
+very quickly, with just a few steps!
+
+Some of the Stocker Project functionalities are:
+- **Different virtual environments** for developing, testing and production
+- **Internationalization** to support different languages
+- **HTML5 and Semantic**
+- Unit **tests**
+- Registers of users, special users, supplies and unit of measurement
+- Edit the amount of your supplies
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
