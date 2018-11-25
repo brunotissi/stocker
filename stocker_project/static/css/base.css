@@ -1,3 +1,8 @@
+html, body {
+    height: 100% !important;
+    margin: 0 !important;
+}
+
 .menu-base {
     min-height: 7% !important;
     margin: 0 !important;
@@ -5,17 +10,24 @@
 }
 
 .conteudo-central{
-    min-height: 650px !important;
+    height: 800px !important;
+}
+
+.push {
+    height: 15px !important;
 }
 
 .footer-base {
     min-height: 10% !important;
     border-radius: 0 !important;
     margin-bottom:0 !important;
-    position:absolute !important;
-    bottom:0 !important;
-    width:100% !important;
+    position: absolute !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    color: white !important;
     text-align: center !important;
+    display: block !important;
 }
 
 .stocker-logo {
