@@ -45,7 +45,8 @@
     </div>
     {% else %}
     <div class="ui center aligned segment">
-      <p>Clique aqui e vá para a listagem de insumos: <a href="{% url 'listar_insumos' %}">Listar Insumos</a>
+      <p>{% blocktrans %}Clique aqui e vá para a listagem de insumos: {% endblocktrans %}
+          <a href="{% url 'listar_insumos' %}">{% blocktrans %}Listar Insumos{% endblocktrans %}</a>
       </p>
     </div>
     {% endif %}

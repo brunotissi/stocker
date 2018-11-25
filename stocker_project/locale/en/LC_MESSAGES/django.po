@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-21 23:30-0200\n"
-"PO-Revision-Date: 2018-11-21 23:34-0200\n"
+"POT-Creation-Date: 2018-11-25 20:26-0200\n"
+"PO-Revision-Date: 2018-11-25 20:27-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,27 +17,47 @@ msgstr ""
 "Language: en\n"
 "X-Generator: Poedit 2.2\n"
 
+#: .\stocker\forms\EditInsumoForm.py:6
+msgid "Quantidade atual"
+msgstr "Actual amount"
+
+#: .\stocker\forms\InsumoForm.py:6
+msgid "Nome do Insumo"
+msgstr "Supplie Name"
+
+#: .\stocker\forms\InsumoForm.py:7 .\templates\stocker\listar_insumos.html:22
+msgid "Quantidade"
+msgstr "Amount"
+
+#: .\stocker\forms\InsumoForm.py:8 .\templates\stocker\listar_insumos.html:23
+msgid "Unidade de Medida"
+msgstr "Unit of Measurement"
+
+#: .\stocker\forms\UnidadeForm.py:7 .\stocker\forms\UnidadeForm.py:8
+msgid "Nome da Unidade de Medida"
+msgstr "Unit of Measurement Name"
+
 #: .\stocker_project\settings.py:44
 msgid "English"
 msgstr ""
 
 #: .\stocker_project\settings.py:45
-msgid "Português"
+msgid "Portugues"
 msgstr ""
 
-#: .\templates\registration\login.html:15
+#: .\templates\registration\login.html:20
 msgid "Informe seus dados para acessar o sistema."
 msgstr "Enter your data to access the system."
 
-#: .\templates\registration\login.html:42 .\templates\stocker\index.html:36
+#: .\templates\registration\login.html:47 .\templates\stocker\index.html:41
 msgid "Entrar"
 msgstr "Login"
 
-#: .\templates\registration\login.html:53
+#: .\templates\registration\login.html:58
 msgid "Ainda não está Registrado?"
 msgstr "Not Registered?"
 
-#: .\templates\registration\login.html:54 .\templates\stocker\index.html:28
+#: .\templates\registration\login.html:59 .\templates\stocker\index.html:33
 msgid "Cadastre-se"
 msgstr "Register"
 
@@ -102,31 +122,46 @@ msgstr "Current quantity in your stock:"
 
 #: .\templates\stocker\add_insumos.html:29
 msgid "Informe a quantidade que deseja inserir:"
-msgstr "Enter the quantity you want to enter:"
+msgstr "Enter the quantity you want to add:"
 
 #: .\templates\stocker\add_insumos.html:37
 msgid "Adicionar Insumo"
 msgstr "Add Supply"
 
-#: .\templates\stocker\base.html:23
+#: .\templates\stocker\base.html:22
 msgid "Cadastrar Unidades"
 msgstr "Register units"
 
-#: .\templates\stocker\base.html:24
+#: .\templates\stocker\base.html:23
 msgid "Cadastrar Insumos"
 msgstr "Register Supplies"
 
-#: .\templates\stocker\base.html:25
+#: .\templates\stocker\base.html:24 .\templates\stocker\index.html:49
 msgid "Listar Insumos"
 msgstr "List Supplies"
+
+#: .\templates\stocker\base.html:25 .\templates\stocker\perfil.html:6
+#: .\templates\stocker\perfil.html:11
+msgid "Perfil"
+msgstr "Profile"
 
 #: .\templates\stocker\base.html:26
 msgid "Sair"
 msgstr "Logout"
 
-#: .\templates\stocker\base.html:45
-msgid "Stocker por alunos do BSI-6 de 2018 - Ana, Bruno, Igor, José"
+#: .\templates\stocker\base.html:58
+#, fuzzy
+#| msgid "Stocker por alunos do BSI-6 de 2018 - Ana, Bruno, Igor, José"
+msgid "Stocker por alunos do BSI-6 de 2018 - Ana, Bruno, José"
 msgstr "Stocker by BSI-6 of 2018 students - Ana, Bruno, Igor, José"
+
+#: .\templates\stocker\base.html:59
+msgid ""
+"\n"
+"                 Documentação"
+msgstr ""
+"\n"
+"                 Documentation"
 
 #: .\templates\stocker\cad_insumos.html:6
 #: .\templates\stocker\cad_insumos.html:11
@@ -151,25 +186,29 @@ msgstr "Fill in the field below and register your new Unit of Measure."
 msgid "Criar unidade"
 msgstr "Register units"
 
-#: .\templates\stocker\index.html:14
+#: .\templates\stocker\index.html:18
 msgid "Bem-vindo ao Stocker!"
 msgstr "Welcome to Stocker!"
 
-#: .\templates\stocker\index.html:15
+#: .\templates\stocker\index.html:19
 msgid " Sistema de Gestão para Estoques."
 msgstr " Inventory management system."
 
-#: .\templates\stocker\index.html:20
+#: .\templates\stocker\index.html:25
 msgid "Ou"
 msgstr "Or"
 
-#: .\templates\stocker\index.html:26
+#: .\templates\stocker\index.html:31
 msgid "Se você é novo no nosso site"
 msgstr "If you are new to the site"
 
-#: .\templates\stocker\index.html:34
+#: .\templates\stocker\index.html:39
 msgid "Se você já é cadastrado é só"
 msgstr "If you already have an account"
+
+#: .\templates\stocker\index.html:48
+msgid "Clique aqui e vá para a listagem de insumos: "
+msgstr "Click here and go to the list of supplies: "
 
 #: .\templates\stocker\listar_insumos.html:6
 #: .\templates\stocker\listar_insumos.html:11
@@ -186,29 +225,37 @@ msgstr ""
 "or\n"
 "                withdraw quantity from your supply."
 
-#: .\templates\stocker\listar_insumos.html:22
+#: .\templates\stocker\listar_insumos.html:21
 msgid "Insumo"
 msgstr "Supply"
 
-#: .\templates\stocker\listar_insumos.html:23
-msgid "Quantidade"
-msgstr "Amount"
-
 #: .\templates\stocker\listar_insumos.html:24
-msgid "Unidade de Medida"
-msgstr "Unit of Measurement"
-
-#: .\templates\stocker\listar_insumos.html:25
 msgid "Adicionar"
 msgstr "Add"
 
-#: .\templates\stocker\listar_insumos.html:26
+#: .\templates\stocker\listar_insumos.html:25
 msgid "Retirar"
 msgstr "Withdraw"
 
-#: .\templates\stocker\listar_insumos.html:42
+#: .\templates\stocker\listar_insumos.html:41
 msgid "Não há insumos cadastrados!"
 msgstr "There are no registered supplies!"
+
+#: .\templates\stocker\perfil.html:13
+msgid "Aqui estão suas informações."
+msgstr "These are your information."
+
+#: .\templates\stocker\perfil.html:20
+msgid "Username:"
+msgstr "Username:"
+
+#: .\templates\stocker\perfil.html:22
+msgid "E-mail:"
+msgstr "E-mail:"
+
+#: .\templates\stocker\perfil.html:26
+msgid "Este registo não foi encontrado!"
+msgstr "This record was not found!"
 
 #: .\templates\stocker\retirar_insumos.html:6
 msgid "Retirada de Insumos"
