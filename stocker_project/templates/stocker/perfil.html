@@ -1,0 +1,32 @@
+{% extends 'stocker/base.html' %}
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title_block %}
+{% blocktrans %}Perfil{% endblocktrans %}
+{% endblock %}
+
+{% block body_block %}
+    <h1 class="ui block header">
+        {% blocktrans %}Perfil{% endblocktrans %}
+        <div class="ui basic segment">
+            <div class="sub header">{% blocktrans %}Aqui estão suas informações.{% endblocktrans %}</div>
+        </div>
+    </h1>
+        <div class="ui grid">
+            <div class="four wide column"></div>
+            <div class="eight wide column">
+                 {% if pessoa %}
+                  <label>{% blocktrans %}Username:{% endblocktrans %}</label>
+                  <div class="ui blue segment">{{ pessoa.username }}</div>
+                  <label>{% blocktrans %}E-mail:{% endblocktrans %}</label>
+                  <div class="ui blue segment">{{ pessoa.email }}</div>
+                {% else %}
+                    <div class="ui blue segment">
+                        {% blocktrans %}Este registo não foi encontrado!{% endblocktrans %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="four wide column"></div>
+        </div>
+{% endblock %}

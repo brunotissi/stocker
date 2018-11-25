@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^listar_insumos/$', views.listar_insumos.as_view(), name='listar_insumos'),
     url(r'^add_insumos/(?P<id>\d+)/$', views.add_insumos.as_view(), name='add_insumos'),
     url(r'^retirar_insumos/(?P<id>\d+)/$', views.retirar_insumos.as_view(), name='retirar_insumos'),
+    url(r'^perfil/$', views.Perfil.as_view(), name='perfil'),
 ]
