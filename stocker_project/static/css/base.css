@@ -18,6 +18,19 @@
     text-align: center !important;
 }
 
-#stocker-logo {
+.stocker-logo {
     font-size: 35px;
+    text-decoration:none !important;
+}
+
+.link-stocker:visited {
+    color: white;
+}
+
+.link-stocker:active {
+    color: white;
+}
+
+.link-stocker:hover {
+    color: #1F88BE !important;
 }

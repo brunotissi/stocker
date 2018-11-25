@@ -17,7 +17,7 @@
 <body>
     <div class="ui inverted segment menu-base">
         <div class="ui inverted secondary pointing menu">
-            <div id="stocker-logo"><h1>STOCKER</h1></div>
+            <div><h1 class="stocker-logo"><a href="{% url 'index' %}" class="link-stocker">STOCKER</a></h1></div>
             {% block user_options_block %}
             <a class="item" href="{% url 'cad_unidade' %}">{% blocktrans %}Cadastrar Unidades{% endblocktrans %}</a>
             <a class="item" href="{% url 'cad_insumos' %}">{% blocktrans %}Cadastrar Insumos{% endblocktrans %}</a>
@@ -44,12 +44,8 @@
     </div>
     <div class="ui grid">
       <div class="sixteen wide column"></div>
-      <div class="three wide column">
-          {% block sidebar %}
-          {% endblock %}
-      </div>
-      <div class="one wide column"></div>
-      <div class="nine wide column conteudo-central">
+      <div class="three wide column"></div>
+      <div class="ten wide column conteudo-central">
           {% block body_block %}
           {% endblock %}
       </div>

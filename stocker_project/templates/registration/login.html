@@ -5,11 +5,15 @@
 {% block title_block %}
 	Login
 {% endblock %}
-{% block body_block %}
-	{% block user_options_block %}
-	{% endblock %}
 
-{% if not user.is_authenticated %}
+{% block user_options_block %}
+  {% if user.is_authenticated %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
+{% block body_block %}
+	{% if not user.is_authenticated %}
 	<h1 class="ui block header">
 		Login
 		<div class="ui basic segment">

@@ -6,9 +6,13 @@
   Stocker
 {% endblock %}
 
+{% block user_options_block %}
+  {% if user.is_authenticated %}
+    {{ block.super }}
+  {% endif %}
+{% endblock %}
+
 {% block body_block %}
-  {% block user_options_block %}
-  {% endblock %}
         <br/>
       <div class="ui basic segment">
         <h1 class="center aligned">{% trans "Bem-vindo ao Stocker!"%}</h1>
