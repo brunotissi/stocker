@@ -9,7 +9,5 @@ class Perfil(LoginRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         user = request.user.id
-        print("-----", user)
         pessoa = User.objects.get(id=user)
-        print("-----", pessoa.username)
         return render(request, self.template_name, {'pessoa': pessoa})

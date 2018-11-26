@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load i18n %}
 {% load staticfiles %}
+{% load user_tags %}
 
 <html>
 <head lang="pt">
@@ -19,8 +20,10 @@
         <div class="ui inverted secondary pointing menu">
             <div><h1 class="stocker-logo"><a href="{% url 'index' %}" class="link-stocker">STOCKER</a></h1></div>
             {% block user_options_block %}
+            {% if request.user|has_group:"gerentes" %}
             <a class="item" href="{% url 'cad_unidade' %}">{% blocktrans %}Cadastrar Unidades{% endblocktrans %}</a>
             <a class="item" href="{% url 'cad_insumos' %}">{% blocktrans %}Cadastrar Insumos{% endblocktrans %}</a>
+            {% endif %}
             <a class="item" href="{% url 'listar_insumos' %}">{% blocktrans %}Listar Insumos{% endblocktrans %}</a>
             <a class="item" href="{% url 'perfil' %}">{% blocktrans %}Perfil{% endblocktrans %}</a>
             <a class="item" href="{% url 'auth_logout' %}?next=/stocker/">{% blocktrans %}Sair{% endblocktrans %}</a>
