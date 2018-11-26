@@ -60,6 +60,14 @@ stocker.views.login\_required module
     :undoc-members:
     :show-inheritance:
 
+stocker.views.perfil module
+---------------------------
+
+.. automodule:: stocker.views.perfil
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 stocker.views.redirect\_view module
 -----------------------------------
 

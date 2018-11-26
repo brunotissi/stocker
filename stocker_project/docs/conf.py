@@ -12,21 +12,18 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-
 import os
 import sys
 import django
-
 sys.path.insert(0, os.path.abspath('..'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'stocker_project.settings'
 django.setup()
 
-
 # -- Project information -----------------------------------------------------
 
 project = 'Stocker'
-copyright = '2018, Ana, Bruno, Jose'
-author = 'Ana, Bruno, Jose'
+copyright = '2018, Ana, Bruno, José'
+author = 'Ana, Bruno, José'
 
 # The short X.Y version
 version = ''
@@ -46,7 +43,6 @@ release = '1.0'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
-    'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.imgmath',
@@ -141,7 +137,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'Stocker.tex', 'Stocker Documentation',
-     'Ana, Bruno, Jose', 'manual'),
+     'Ana, Bruno, José', 'manual'),
 ]
 
 
@@ -186,11 +182,6 @@ epub_exclude_files = ['search.html']
 
 
 # -- Extension configuration -------------------------------------------------
-
-# -- Options for intersphinx extension ---------------------------------------
-
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
 
 # -- Options for todo extension ----------------------------------------------
 

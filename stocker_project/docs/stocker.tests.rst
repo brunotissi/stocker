@@ -20,14 +20,6 @@ stocker.tests.test\_models module
     :undoc-members:
     :show-inheritance:
 
-stocker.tests.test\_view module
--------------------------------
-
-.. automodule:: stocker.tests.test_view
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 
 Module contents
 ---------------
