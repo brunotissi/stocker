@@ -1,0 +1,147 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>stocker.tests.test_forms &#8212; Stocker 1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for stocker.tests.test_forms</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">django.test</span> <span class="k">import</span> <span class="n">TestCase</span>
+<span class="kn">from</span> <span class="nn">..models</span> <span class="k">import</span> <span class="n">Unidade</span><span class="p">,</span> <span class="n">Insumo</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="k">import</span> <span class="n">User</span>
+<span class="kn">from</span> <span class="nn">..forms</span> <span class="k">import</span> <span class="n">InsumoForm</span><span class="p">,</span><span class="n">UnidadeForm</span><span class="p">,</span><span class="n">UserForm</span><span class="p">,</span><span class="n">EditInsumoForm</span>
+
+
+<div class="viewcode-block" id="UnidadeFormTest"><a class="viewcode-back" href="../../../stocker.tests.html#stocker.tests.test_forms.UnidadeFormTest">[docs]</a><span class="k">class</span> <span class="nc">UnidadeFormTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="UnidadeFormTest.test_valid_form"><a class="viewcode-back" href="../../../stocker.tests.html#stocker.tests.test_forms.UnidadeFormTest.test_valid_form">[docs]</a>    <span class="k">def</span> <span class="nf">test_valid_form</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">Unidade</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">nome</span><span class="o">=</span><span class="s1">&#39;Kilo&#39;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nome&#39;</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">nome</span><span class="p">}</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">UnidadeForm</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="UnidadeFormTest.test_invalid_form"><a class="viewcode-back" href="../../../stocker.tests.html#stocker.tests.test_forms.UnidadeFormTest.test_invalid_form">[docs]</a>    <span class="k">def</span> <span class="nf">test_invalid_form</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">Unidade</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">nome</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nome&#39;</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">nome</span><span class="p">}</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">UnidadeForm</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">())</span></div></div>
+
+<div class="viewcode-block" id="InsumoFormTest"><a class="viewcode-back" href="../../../stocker.tests.html#stocker.tests.test_forms.InsumoFormTest">[docs]</a><span class="k">class</span> <span class="nc">InsumoFormTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+
+<div class="viewcode-block" id="InsumoFormTest.test_invalid_form"><a class="viewcode-back" href="../../../stocker.tests.html#stocker.tests.test_forms.InsumoFormTest.test_invalid_form">[docs]</a>    <span class="k">def</span> <span class="nf">test_invalid_form</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">kilo</span> <span class="o">=</span> <span class="n">Unidade</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">nome</span><span class="o">=</span><span class="s1">&#39;Kilo&#39;</span><span class="p">)</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">Insumo</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">nome</span><span class="o">=</span><span class="s1">&#39;Arroz&#39;</span><span class="p">,</span><span class="n">quantidade</span><span class="o">=</span><span class="s1">&#39;20&#39;</span><span class="p">,</span><span class="n">unidade</span><span class="o">=</span><span class="n">kilo</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nome&#39;</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">nome</span><span class="p">,</span><span class="s1">&#39;quantidade&#39;</span> <span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">quantidade</span><span class="p">,</span><span class="s1">&#39;unidade&#39;</span> <span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">unidade</span><span class="p">}</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">InsumoForm</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">())</span></div></div>
+
+<div class="viewcode-block" id="EditInsumoFormTest"><a class="viewcode-back" href="../../../stocker.tests.html#stocker.tests.test_forms.EditInsumoFormTest">[docs]</a><span class="k">class</span> <span class="nc">EditInsumoFormTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<div class="viewcode-block" id="EditInsumoFormTest.test_valid_form"><a class="viewcode-back" href="../../../stocker.tests.html#stocker.tests.test_forms.EditInsumoFormTest.test_valid_form">[docs]</a>    <span class="k">def</span> <span class="nf">test_valid_form</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;quantidade&#39;</span> <span class="p">:</span> <span class="mi">100</span><span class="p">}</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">EditInsumoForm</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="EditInsumoFormTest.test_invalid_form"><a class="viewcode-back" href="../../../stocker.tests.html#stocker.tests.test_forms.EditInsumoFormTest.test_invalid_form">[docs]</a>    <span class="k">def</span> <span class="nf">test_invalid_form</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;quantidade&#39;</span> <span class="p">:</span> <span class="s1">&#39;String&#39;</span><span class="p">}</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">UnidadeForm</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">())</span></div></div>
+
+<div class="viewcode-block" id="UserFormTest"><a class="viewcode-back" href="../../../stocker.tests.html#stocker.tests.test_forms.UserFormTest">[docs]</a><span class="k">class</span> <span class="nc">UserFormTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+
+<div class="viewcode-block" id="UserFormTest.test_invalid_form"><a class="viewcode-back" href="../../../stocker.tests.html#stocker.tests.test_forms.UserFormTest.test_invalid_form">[docs]</a>    <span class="k">def</span> <span class="nf">test_invalid_form</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">w</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;Teste&#39;</span><span class="p">,</span><span class="n">email</span><span class="o">=</span><span class="s1">&#39;t@t.com&#39;</span><span class="p">,</span><span class="n">password</span><span class="o">=</span><span class="s1">&#39;a2s3d4f5&#39;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">username</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">email</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">:</span> <span class="n">w</span><span class="o">.</span><span class="n">password</span><span class="p">}</span>
+        <span class="n">form</span> <span class="o">=</span> <span class="n">UserForm</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">())</span></div></div>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">Stocker</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Ana, Bruno, Jose.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
