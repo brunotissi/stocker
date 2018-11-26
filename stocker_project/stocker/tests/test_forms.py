@@ -19,12 +19,6 @@ class UnidadeFormTest(TestCase):
 
 class InsumoFormTest(TestCase):
 
-    # def test_valid_form(self):
-    #     kilo = Unidade.objects.create(nome='Kilo')
-    #     w = Insumo.objects.create(nome='Arroz',quantidade='20',unidade=kilo)
-    #     data = {'nome': w.nome,'quantidade' : w.quantidade,'unidade' : w.unidade}
-    #     form = InsumoForm(data=data)
-    #     self.assertTrue(form.is_valid())
 
     def test_invalid_form(self):
         kilo = Unidade.objects.create(nome='Kilo')
@@ -45,12 +39,6 @@ class EditInsumoFormTest(TestCase):
         self.assertFalse(form.is_valid())
 
 class UserFormTest(TestCase):
-
-    # def test_valid_form(self):
-    #     w = User.objects.create(username='Teste',email='t@t.com',password='a2s3d4f5')
-    #     data = {'username': w.username, 'email': w.email, 'password': w.password}
-    #     form = UserForm(data=data)
-    #     self.assertTrue(form.is_valid())
 
     def test_invalid_form(self):
         w = User.objects.create(username='Teste',email='t@t.com',password='a2s3d4f5')
