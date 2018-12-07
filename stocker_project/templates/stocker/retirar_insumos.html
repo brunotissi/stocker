@@ -27,7 +27,7 @@
                   <label>{% blocktrans %}Quantidade atual no seu estoque:{% endblocktrans %}</label>
                   <div class="ui blue segment">{{ insumo.quantidade }}</div>
                 <label><strong>{% blocktrans %}Informe a quantidade que deseja retirar:{% endblocktrans %}</strong></label>
-                <input type="number" min=1 name="quantidade" /><br/>
+                <input type="number" min=1  max={{ insumo.quantidade }} name="quantidade" /><br/>
             </div>
             <div class="four wide column"></div>
 
