@@ -8,7 +8,6 @@ class ModelUnidadeTest(TestCase):
         kilo.save()
         self.assertEqual((kilo.nome == 'Kilogramas'), True)
 
-
 class ModelInsumoTest(TestCase):
     def test_insumo_quantidade_positiva(self):
         kilo = Unidade(nome='Kilogramas')
@@ -19,9 +18,11 @@ class ModelInsumoTest(TestCase):
         self.assertEqual((ins.quantidade == '30'), True)
         self.assertEqual((ins.ativo == True), True)
         self.assertEqual((ins.unidade.nome == kilo.nome), True)
+
     def test_insumo_quantidade_negativa(self):
         kilo = Unidade(nome='Kilogramas')
         kilo.save()
         ins = Insumo(nome='Arroz', quantidade='-5', ativo=True, unidade=kilo)
         ins.save()
-        self.assertEqual((ins.quantidade == '-5'), True)
+        ins.full_clean()
+        self.assertEqual((ins.quantidade == '-5'), False)
