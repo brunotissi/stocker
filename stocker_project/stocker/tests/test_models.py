@@ -7,10 +7,7 @@ class ModelUnidadeTest(TestCase):
         kilo = Unidade(nome='Kilogramas')
         kilo.save()
         self.assertEqual((kilo.nome == 'Kilogramas'), True)
-    def test_unidade_nome_com_numero(self):
-        num = Unidade(nome='123')
-        num.save()
-        self.assertEqual((num.nome == '123'), True)
+
 
 class ModelInsumoTest(TestCase):
     def test_insumo_quantidade_positiva(self):
